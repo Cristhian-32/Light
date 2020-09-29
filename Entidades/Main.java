@@ -5,10 +5,10 @@ import datos.DatosAlumno;
 import entidades.Alumno;
 import entidades.Cursos;
 
-public class App {
+public class Main {
 
     public static void main(String[] args) {
-        Scanner ent = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         int opt = 0;
         DatosAlumno pData = new DatosAlumno();
 
@@ -19,16 +19,16 @@ public class App {
             System.out.println("3 Eliminar ");
             System.out.println("0 Salir ");
             System.out.println("Seleccionar: ");
-            opt = ent.nextInt();
+            opt = input.nextInt();
             System.out.println("Seleccionaste" + opt);
-            ent.nextLine();
+            input.nextLine();
             switch (opt) {
                 case 1:
                     System.out.println("------1 Lista------");
-                    List<Alumno> lis = pData.AlumnoDatos;
+                    List<Alumno> lis = DatosAlumno.listaAlumno;
                     System.out.println("ID \t Nombre \t Paterno \t Materno");
-                    for (Alumno a : lis) {
-                        System.out.println(a.getId() + "\t" + a.getNombre() + "\t" + a.getPaterno() + "\t" + a.getMaterno());
+                    for (Alumno d : lis) {
+                        System.out.println(d.getId() + "\t" + d.getNombre() + "\t" + d.getPaterno() + "\t" + d.getMaterno());
                     }
                     break;
                 case 2:
@@ -36,19 +36,19 @@ public class App {
                     Alumno a1 = new Alumno();
 
                     System.out.println("Ingrese Nombre: ");
-                    a1.setNombre(ent.nextLine());
+                    a1.setNombre(input.nextLine());
                     System.out.println("Ingrese Apellido Paterno");
-                    a1.setPaterno(ent.nextLine());
+                    a1.setPaterno(input.nextLine());
                     System.out.println("Ingrese Apellido Materno");
-                    a1.setMaterno(ent.nextLine());
+                    a1.setMaterno(input.nextLine());
                     System.out.println("Ingrese Direccion");
-                    a1.setDireccion(ent.nextLine());
+                    a1.setDireccion(input.nextLine());
                     System.out.println("Ingrese Correo");
-                    a1.setCorreo(ent.nextLine());
+                    a1.setCorreo(input.nextLine());
                     System.out.println("Ingrese DNI");
-                    a1.setDni(ent.nextLine());
+                    a1.setDni(input.nextLine());
 
-                    pData.create(a);
+                    pData.create(a1);
                     break;
                 case 3:
                     System.out.println("------3 Eliminar------");

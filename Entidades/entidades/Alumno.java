@@ -2,13 +2,7 @@
 public class Alumno {
     
     private int id;
-    private String nombre;
-    private String paterno;
-    private String materno;
-    private String fechaNac;
-    private String direccion;
-    private String correo;
-
+    private String nombre, paterno, materno, fechaNac, direccion, correo, dni;
 
     public int getId() {
         return id;
